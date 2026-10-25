@@ -1,9 +1,35 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net10.0-windows</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <Authors>Hamed</Authors>
+        <Company>Paragon Security</Company>
+        <Description>ParaTrack DTO library to be shared between backend and frontend</Description>
+        <Copyright>Copyright © $([System.DateTime]::UtcNow.ToString(yyyy))</Copyright>
+        <VersionSuffix>0.1.0.$([System.DateTime]::UtcNow.ToString(MMdd))</VersionSuffix>
+        <FileVersion>$(VersionSuffix)</FileVersion>
+        <AssemblyVersion>$(VersionSuffix)</AssemblyVersion>
+        <Version>$(VersionSuffix)</Version>
+        <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+        <Configurations>Debug;Release;Staging</Configurations>
+    </PropertyGroup>
 
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DefineConstants>TRACE;DEBUG</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Staging|AnyCPU'">
+      <DefineConstants>TRACE;DEBUG</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Staging|AnyCPU'">
+        <DefineConstants>TRACE;QA</DefineConstants>
+        <Optimize>false</Optimize>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <Optimize>true</Optimize>
+    </PropertyGroup>
 </Project>
