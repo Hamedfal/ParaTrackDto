@@ -8,7 +8,7 @@
 
         public Guid IncidentTypeId { get; set; }
 
-        public ManagementGroupDto? ManagementGroup { get; set; } = null;
+        public ManagementCompanyDto? ManagementGroup { get; set; } = null;
 
         public IncidentTypeDto? IncidentType { get; set; } = null;
     }

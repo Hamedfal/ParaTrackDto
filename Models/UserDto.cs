@@ -12,10 +12,12 @@ namespace ParaTrackDto.Models
 
         public string? Title { get; set; }
 
-        public ParaRole ParaRole { get; set; } = 0;
+        public string? Mobile { get; set; }
+
+        public ParaLevel ParaLevel { get; set; } = 0;
 
         public bool? IsActive { get; set; }
 
-        public ICollection<UserGroupDto>? UserGroups { get; set; } = null;
+        public ICollection<UserCompanyDto>? UserCompanies { get; set; } = null;
     }
 }
